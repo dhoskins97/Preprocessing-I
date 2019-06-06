@@ -57,3 +57,145 @@ html, body {
     height: 100%;
 }
 
+@bgBlue: #191669;
+@bgGray: #AAAAAA;
+@txtGray: rgb(128, 128, 128);
+
+.box2mixin {
+	width: 28%;
+}
+
+.boxborder {
+	border: solid 2px black;
+	padding: 5px;
+	background-color: @bgGray;
+
+	h3 {
+		color: black;
+		font-weight: bold;
+	}
+
+	p {
+		color: black;
+	}
+}
+
+.bigwrapper {
+width: 100%;
+background-color: @bgGray;
+
+@media (max-width: 500px;){
+	width: 500px;
+}
+
+	.smallwrapper {
+	max-width: 65%;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: @bgBlue;
+	padding-bottom: 40px;
+	
+		nav {
+			width: 100%;
+			background-color: @bgBlue;
+			display: flex;
+			justify-content: space-evenly;
+			margin-bottom: 100px;
+			border-top: 3px solid black;
+			border-bottom: 3px solid black;
+			border-left: 3px solid black;
+		
+			a {
+				width: 25%;
+				padding: 25px 0;
+				color: white;
+				text-decoration: none;
+				text-align: center;
+				border-right: 3px solid black;
+			}
+
+			a:hover {
+				color: @txtGray;
+			}
+		
+		}
+	
+	.box1 {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-bottom: 80px;
+
+		.headshot {
+			width: 30%;
+			height: auto;
+		}
+
+		h1 {
+			font-size: 270%;
+			font-weight: 700;
+			color: @txtGray;
+			padding-top: 38px;
+			padding-bottom: 20px;
+		}
+
+		h3 {
+			width: 70%;
+			font-size: 125%;
+			text-align: center;
+		}
+	
+	}	
+
+	.box2 {
+		display: flex;
+		justify-content: space-around;
+		margin-bottom: 40px;
+	
+		.box2component1 {
+			.box2mixin ();
+			.boxborder ();
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+	
+		.box2component2 {
+			.box2mixin ();
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+	
+		}
+
+		.box2component3 {
+			.box2mixin ();
+			.boxborder ();
+
+			p {
+				padding: 20px 0;
+			}
+		}
+	
+	
+	}	
+	
+	.box3 {
+		.boxborder();
+		margin: 40px 40px 0 40px;
+
+	}
+	
+	h3 {
+		color: @txtGray;
+	}
+	
+	p {
+		color: @txtGray;
+	}
+
+	} /* smallwrapper end */
+
+} /* bigwrapper end */
+
